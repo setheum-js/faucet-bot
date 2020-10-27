@@ -5,8 +5,8 @@
   "author": "qiuhao <qiuhao951@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@acala-network/api": "^0.3.1",
-    "@polkadot/api": "^1.31.2",
+    "@acala-network/api": "^0.4.0-beta.26",
+    "@polkadot/api": "^2.3.2-17",
     "@types/bull": "^3.14.2",
     "@types/koa": "^2.11.4",
     "@types/koa-bodyparser": "^4.3.0",

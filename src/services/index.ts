@@ -44,6 +44,10 @@ export function formatToSendable(
   return new BN(num).multipliedBy(new BN(10 ** precision)).toFixed(0);
 }
 
+export function formatToken (token: string) {
+  return { token };
+}
+
 export class Service {
   public api!: ApiPromise;
   private account: KeyringPair;
@@ -134,7 +138,7 @@ export class Service {
   public async queryBalance() {
     const result = await Promise.all(
       this.config.assets.map((token) =>
-        (this.api as any).derive.currencies.balance(this.account.address, token)
+        (this.api as any).derive.currencies.balance(this.account.address, formatToken(token))
       )
     );
 
@@ -228,7 +232,7 @@ export class Service {
   public buildTx(config: SendConfig) {
     return this.api.tx.utility.batch(
       config.map(({ token, balance, dest }) =>
-        this.api.tx.currencies.transfer(dest, token, balance)
+        this.api.tx.currencies.transfer(dest, formatToken(token), balance)
       )
     );
   }
