@@ -5,11 +5,12 @@ import { queryBalances } from "./balances";
 import { loggerMiddware } from "./middlewares/logger";
 import { Service } from "../../services";
 import { sendAssets } from "./faucet";
+import { queryCandy, sendCandy } from "./candy";
 import { Storage } from "../../util/storage";
 import { Config } from "../../util/config";
 
 export interface ApiConfig {
-  config: Config['channel']['api']
+  config: Config["channel"]["api"];
   service: Service;
   storage: Storage;
 }
@@ -33,6 +34,10 @@ export default async function (config: ApiConfig) {
 
   // send tokens
   router.post("/faucet", sendAssets(config.service, config.storage, config.config));
+
+  // drop candy & nft
+  router.get("/candy", queryCandy(config.service, config.storage, config.config));
+  router.post("/candy", sendCandy(config.service, config.storage, config.config));
 
   app.use(router.routes());
   app.use(router.allowedMethods());

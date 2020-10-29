@@ -2,6 +2,15 @@
 [storage.redis]
 url = "redis://127.0.0.1:6379"
 
+[storage.postgres]
+connectionString = "postgres://127.0.0.1:5432"
+
+[accounts]
+[accounts.sudo]
+mnemonic = "CUSTOM MNEMONIC"
+[accounts.nft]
+mnemonic = "CUSTOM MNEMONIC"
+
 [task]
 redis = "redis://127.0.0.1:6379"
 maxPendingCount = 20
@@ -73,3 +82,5 @@ riotSuccess = """
 "CHECK_LIMIT_FAILED" = "Check Limit Error"
 "UPDATE_LIMIT_FAILED" = "Update Limit Error"
 "INSERT_TASK_FAILED" = "Insert Task Error"
+"CANDY_CLAIMED" = "<%= account %> already claimed the candy."
+"CANDY_EMPTY" = "<%= account %> has no candy."

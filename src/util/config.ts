@@ -7,6 +7,17 @@ export interface Config {
     redis: {
       url: string;
     };
+    postgres: {
+      connectionString: string;
+    };
+  };
+  accounts: {
+    sudo: {
+      mnemonic: string;
+    };
+    nft: {
+      mnemonic: string;
+    };
   };
   faucet: {
     endpoint: string;
