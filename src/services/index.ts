@@ -13,6 +13,7 @@ import { SendConfig, MessageHandler } from "../types";
 import { TaskQueue, TaskData } from "./task-queue";
 import logger from "../util/logger";
 import { Deferred } from "../util/deferred";
+import { WalletPromise } from "@acala-network/sdk-wallet";
 
 interface FaucetServiceConfig {
   account: KeyringPair;
@@ -33,20 +34,21 @@ interface RequestFaucetParams {
 
 export function formatToReadable(
   num: string | number,
-  token: CurrencyId 
+  decimal: number
 ): number {
-  return FixedPointNumber.fromInner(num, Token.fromCurrencyId(token).decimal).toNumber();
+  return FixedPointNumber.fromInner(num, decimal).toNumber();
 }
 
 export function formatToSendable(
   num: string | number,
-  token: CurrencyId 
+  decimal: number
 ): string {
-  return new FixedPointNumber(num, Token.fromCurrencyId(token).decimal).toChainData();
+  return new FixedPointNumber(num, decimal).toChainData();
 }
 
 export class Service {
   public api!: ApiPromise;
+  private wallet!: WalletPromise;
   private account: KeyringPair;
   private template: Config["template"];
   private config: Config["faucet"];
@@ -89,6 +91,7 @@ export class Service {
 
   public async connect(options: ApiOptions) {
     this.api = await ApiPromise.create(options);
+    this.wallet = new WalletPromise(this.api);
 
     await this.api.isReady.catch(() => {
       throw new Error("connect failed");
@@ -116,7 +119,7 @@ export class Service {
           sendMessage(
             channel,
             params
-	      .map((item) => `${item.token}: ${formatToReadable(item.balance, this.api.createType('CurrencyId' as any, { Token: item.token }))}`)
+	      .map((item) => `${item.token}: ${formatToReadable(item.balance,this.wallet.getToken(item.token).decimal)}`)
               .join(", "),
             tx
           );
@@ -157,7 +160,7 @@ export class Service {
         balance: result[index]
           ? formatToReadable(
               (result[index] as Balance).toString(),
-              this.api.createType('CurrencyId' as any, { Token: token })
+              this.wallet.getToken(token).decimal
             )
           : 0,
       };
@@ -231,9 +234,9 @@ export class Service {
   }
 
   public buildTx(config: SendConfig) {
-    return this.api.tx.utility.batch(
+    return this.api.tx.utility.batchAll(
       config.map(({ token, balance, dest }) =>
-        this.api.tx.currencies.transfer(dest, { token: token }, balance)
+        this.api.tx.currencies.transfer(dest, { Token: token }, balance)
       )
     );
   }
@@ -291,7 +294,7 @@ export class Service {
     // check build tx
     const params = strategyDetail.amounts.map((item) => ({
       token: item.asset,
-      balance: formatToSendable(item.amount, this.api.createType('CurrencyId' as any, { Token: item.asset })),
+      balance: formatToSendable(item.amount, this.wallet.getToken(item.asset).decimal),
       dest: address,
     }));
 

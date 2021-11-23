@@ -10,7 +10,6 @@ export interface Config {
   };
   faucet: {
     endpoint: string;
-    precision: number;
     assets: string[];
     account: {
       mnemonic: string;

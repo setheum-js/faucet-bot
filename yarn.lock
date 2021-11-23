@@ -24,7 +24,7 @@
     "@polkadot/api" "^6.5.2"
     "@polkadot/rpc-core" "^6.5.2"
 
-"@acala-network/sdk-core@^3.0.2-8":
+"@acala-network/sdk-core@3.0.2", "@acala-network/sdk-core@^3.0.2-8":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@acala-network/sdk-core/-/sdk-core-3.0.2.tgz#9d24a6d23b47a8353b49c9f8da7e3474bed1e2d5"
   integrity sha512-9HbnF2z9+8fdpFlgw1ySMGUIiu+z3S8L/YkDUzvCpBruSV2bXDahReBXXd+6UCkNwFUCrhKsJxNdH/Aotn2UIA==
@@ -37,6 +37,17 @@
     bignumber.js "^9.0.0"
     events "^3.2.0"
     lodash "^4.17.20"
+
+"@acala-network/sdk-wallet@^3.0.2-8":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@acala-network/sdk-wallet/-/sdk-wallet-3.0.2.tgz#53d7232f38de1a5ee96f1ac2b17bb5e1d8f26dc9"
+  integrity sha512-S34UZhg4ACCZWk0Yv0UaVV7v2bhDW1fxf71m/Qj/vWhfookV3HL022GiwJOjoJlhT9nsFHzRlmnxtSmqct2LLw==
+  dependencies:
+    "@acala-network/sdk-core" "3.0.2"
+    "@polkadot/api" "^6.5.2"
+    "@polkadot/types" "^6.5.2"
+    lodash "^4.17.20"
+    rxjs "^7.4.0"
 
 "@acala-network/type-definitions@3.0.2":
   version "3.0.2"

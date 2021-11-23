@@ -8,7 +8,6 @@ maxPendingCount = 20
 
 [faucet]
 endpoint = "ENDPOINT"
-precision = 18
 assets = ['ACA', 'AUSD']
 
 [faucet.account]
