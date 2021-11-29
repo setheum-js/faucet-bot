@@ -9,14 +9,12 @@
 ```bash
 cd $PROJECT_ROOT
 
-yarn
-
-pm2 start -- environment.json
+make start
 ```
 
 ### To Start with pm2
 ```bash
 cd $PROJECT_ROOT
 
-pm2 stop all
+make stop
 ```

@@ -1,1 +1,1 @@
-worker: npm start
+worker: ./scripts/init.sh

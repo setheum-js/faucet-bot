@@ -4,9 +4,6 @@
   "main": "index.js",
   "author": "Setheum JS Developers <setheumjs@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "start": "./scripts/init.sh"
-  },
   "dependencies": {
     "@setheum.js/api": "^2.0.1",
     "@setheum.js/sdk-core": "^2.0.1",
