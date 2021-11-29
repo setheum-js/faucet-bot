@@ -1,4 +1,4 @@
-### Faucet Bot For Acala
+### Faucet Bot For Setheum
 
 ### Environment Required
 1. nodejs

@@ -8,7 +8,7 @@ maxPendingCount = 20
 
 [faucet]
 endpoint = "ENDPOINT"
-assets = ['ACA', 'AUSD']
+assets = ['SETM', 'SERP', 'DNAR', 'SETR', 'SETUSD']
 
 [faucet.account]
 mnemonic = "CUSTOM MNEMONIC"
@@ -16,18 +16,14 @@ mnemonic = "CUSTOM MNEMONIC"
 [faucet.strategy]
 [faucet.strategy.normal]
 amounts = [
-  { asset = 'ACA', amount = 2 },
-  { asset = 'AUSD', amount = 2000 }
+  { asset = 'SETM', amount = 3 },
+  { asset = 'SERP', amount = 2 },
+  { asset = 'DNAR', amount = 1 },
+  { asset = 'SETR', amount = 2000 },
+  { asset = 'SETUSD', amount = 2000 }
 ]
 limit = 2
 frequency = ["1", "day"]
-
-[faucet.strategy.ren]
-amounts = [
-  { asset = 'RENBTC', amount = 0.2 }
-]
-limit = 10
-frequency = ["1", "month"]
 
 [channel]
 [channel.api]
@@ -56,11 +52,11 @@ Usage:
 """
 balance = "<%= account %> The faucet has ${balance} remaining."
 success = """
-  Sent <%= account %> <%= amount %>. [View on Subscan](https://acala-testnet.subscan.io/extrinsic/<%= tx %>)
+  Sent <%= account %> <%= amount %>. [View on Subscan](https://setheum-testnet.subscan.io/extrinsic/<%= tx %>)
 """
 
 riotSuccess = """
-  Sent <%= account %> <%= amount %>. <a href="https://acala-testnet.subscan.io/extrinsic/<%= tx %>">Viewd on Subscan</a>
+  Sent <%= account %> <%= amount %>. <a href="https://setheum-testnet.subscan.io/extrinsic/<%= tx %>">Viewd on Subscan</a>
 """
 
 [template.error]

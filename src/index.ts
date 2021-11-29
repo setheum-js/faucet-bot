@@ -1,7 +1,7 @@
 import { Keyring, WsProvider } from "@polkadot/api";
 import { assert } from "@polkadot/util";
 import { waitReady } from "@polkadot/wasm-crypto";
-import { options } from "@acala-network/api";
+import { options } from "@setheum.js/api";
 
 import { loadConfig } from "./util/config";
 import logger from "./util/logger";
