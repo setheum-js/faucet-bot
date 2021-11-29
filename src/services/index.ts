@@ -1,8 +1,8 @@
 import { ApiPromise } from "@polkadot/api";
 import { add, template } from "lodash";
-import { Token, FixedPointNumber } from "@acala-network/sdk-core"
+import { Token, FixedPointNumber } from "@setheum.js/sdk-core"
 import { ITuple } from "@polkadot/types/types";
-import { Balance, CurrencyId } from "@acala-network/types/interfaces";
+import { Balance, CurrencyId } from "@setheum.js/types/interfaces";
 import { DispatchError } from "@polkadot/types/interfaces";
 import { ApiOptions } from "@polkadot/api/types";
 import { KeyringPair } from "@polkadot/keyring/types";
@@ -13,7 +13,7 @@ import { SendConfig, MessageHandler } from "../types";
 import { TaskQueue, TaskData } from "./task-queue";
 import logger from "../util/logger";
 import { Deferred } from "../util/deferred";
-import { WalletPromise } from "@acala-network/sdk-wallet";
+import { WalletPromise } from "@setheum.js/sdk-wallet";
 
 interface FaucetServiceConfig {
   account: KeyringPair;
