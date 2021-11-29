@@ -5,9 +5,9 @@
   "author": "Setheum JS Developers <setheumjs@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@setheum.js/api": "^3.0.2-8",
-    "@setheum.js/sdk-core": "^3.0.2-8",
-    "@setheum.js/sdk-wallet": "^3.0.2-8",
+    "@setheum.js/api": "^2.0.1",
+    "@setheum.js/sdk-core": "^2.0.1",
+    "@setheum.js/sdk-wallet": "^2.0.1",
     "bignumber.js": "^9.0.0",
     "bull": "^3.18.0",
     "dayjs": "^1.8.35",
