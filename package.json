@@ -5,7 +5,7 @@
   "author": "Setheum JS Developers <setheumjs@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "make start"
+    "start": "./scripts/init.sh"
   },
   "dependencies": {
     "@setheum.js/api": "^2.0.1",
