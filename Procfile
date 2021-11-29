@@ -1,1 +1,1 @@
-worker: pm2 start -- environment.json
+worker: yarn && pm2 start -- environment.json
