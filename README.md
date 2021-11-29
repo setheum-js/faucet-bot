@@ -13,3 +13,10 @@ yarn
 
 pm2 start -- environment.json
 ```
+
+### To Start with pm2
+```bash
+cd $PROJECT_ROOT
+
+pm2 stop all
+```
