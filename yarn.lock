@@ -1282,6 +1282,11 @@ cluster-key-slot@^1.1.0:
   resolved "https://registry.yarnpkg.com/cluster-key-slot/-/cluster-key-slot-1.1.0.tgz#30474b2a981fb12172695833052bc0d01336d10d"
   integrity sha512-2Nii8p3RwAPiFwsnZvukotvow2rIHM+yQ6ZcBXGHdniadkYGZYiGmkHJIbZPIV9nfv7m/U1IPMVVcAhoWFeklw==
 
+cmake@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/cmake/-/cmake-0.0.4.tgz#61b7933e92479862cc5580364d039cc1047c8f1f"
+  integrity sha1-YbeTPpJHmGLMVYA2TQOcwQR8jx8=
+
 co-body@^6.0.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/co-body/-/co-body-6.1.0.tgz#d87a8efc3564f9bfe3aced8ef5cd04c7a8766547"

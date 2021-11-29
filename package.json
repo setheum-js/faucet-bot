@@ -4,12 +4,16 @@
   "main": "index.js",
   "author": "Setheum JS Developers <setheumjs@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "make start"
+  },
   "dependencies": {
     "@setheum.js/api": "^2.0.1",
     "@setheum.js/sdk-core": "^2.0.1",
     "@setheum.js/sdk-wallet": "^2.0.1",
     "bignumber.js": "^9.0.0",
     "bull": "^3.18.0",
+    "cmake": "^0.0.4",
     "dayjs": "^1.8.35",
     "discord.js": "^12.3.1",
     "koa": "^2.13.0",
@@ -21,9 +25,9 @@
     "pm2": "^5.1.2",
     "redis": "^3.0.2",
     "toml": "^3.0.0",
+    "ts-node": "^9.0.0",
     "util": "^0.12.3",
-    "winston": "^3.3.3",
-    "ts-node": "^9.0.0"
+    "winston": "^3.3.3"
   },
   "devDependencies": {
     "@types/bull": "^3.14.2",
