@@ -1,1 +1,1 @@
-worker: ./scripts/init.sh
+worker: pm2 start -- environment.json
